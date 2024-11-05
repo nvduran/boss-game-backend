@@ -12,6 +12,7 @@ router.get("/", async (req: any, res: any) => {
 });
 
 router.post("/", async (req: any, res: any) => {
+    console.log("raw param posted");
     const fightParamsRawSubmits = new FightParamsRawSubmits({
         danger_circle: {
             size: req.body.danger_circle.size,
