@@ -13,6 +13,17 @@ const FightParamsRawSubmitsSchema = new mongoose.Schema({
             shield: Number,
         },
         player_projectile_cooldown: Number,
+        submitter: {
+            id: Number,
+            name: String,
+        },
+        created_at: {
+            type: Date,
+            default: Date.now
+        },
+        fight_id: Number,
+        fight_name: String,
+
     });
 
 module.exports = mongoose.model("Fight Params Raw Submits", FightParamsRawSubmitsSchema);

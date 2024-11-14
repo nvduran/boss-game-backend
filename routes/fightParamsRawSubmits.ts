@@ -25,6 +25,12 @@ router.post("/", async (req: any, res: any) => {
             shield: req.body.boss.shield,
         },
         player_projectile_cooldown: req.body.player_projectile_cooldown,
+        submitter: {
+            id: req.body.submitter.id,
+            name: req.body.submitter.name,
+        },
+        fight_id: req.body.fight_id,
+        fight_name: req.body.fight_name,
     });
 
     try {
