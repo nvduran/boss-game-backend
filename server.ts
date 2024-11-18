@@ -4,6 +4,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import fightParamsRawSubmitsRoute from './routes/fightParamsRawSubmits';
+import userLoginRoute from './routes/userLogin';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/fight-params-raw-submits', fightParamsRawSubmitsRoute);
+app.use('/user-login', userLoginRoute);
 
 // Connect to MongoDB
 const mongoConnection = process.env.DB_CONNECTION || 'nonefound';
