@@ -94,7 +94,8 @@ router.post("/login", async (req:any, res:any) => {
                 // Generate JWT token
                 const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
 
-                res.json({ token, username: user.username, isPaidUser: user.isPaidUser });
+                res.json({ token, username: user.username, isPaidUser: user.isPaidUser, display_name: user.display_name, user_id: user.user_id });
+                console.log("login success");
         } catch (err) {
                 console.error("Error logging in user:", err);
                 res.status(500).json({ message: "Internal Server Error" });
